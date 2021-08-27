@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akspolrare-dae8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akspolrare-dae8"
+  template:
+    metadata:
+      labels:
+        app: "akspolrare-dae8"
+    spec:
+      containers:
+        - name: "akspolrare-dae8"
+          image: "registrypolrare.azurecr.io/akspolrare"
+          ports:
+          - containerPort: 80
